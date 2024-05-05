@@ -1,0 +1,99 @@
+---
+name: Run PR checks
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - next
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint the code base
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+      - name: Globally update npm
+        run: npm install -g npm@latest
+      - name: Install dependencies
+        run: npm ci
+      - name: Install lint dependencies
+        run: |
+          npm install -g markdownlint-cli
+          pip install yamllint
+      - name: Lint code base
+        run: |
+          # Run built-in JavaScript/JSON linting
+          npx lerna run lint
+          # Lint markdown files
+          markdownlint '**/*.md'
+          # Lint YAML files
+          yamllint --format github --config-file .yaml-lint.yml .
+  build_and_test:
+    name: Build and test (on NodeJS 16)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        # setting the shell to bash will enable fail-fast behavior
+        shell: bash
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+      - name: Globally update npm
+        run: npm install -g npm@latest
+      - name: Install dependencies
+        run: npm ci
+      - name: Build library
+        run: npx lerna run build
+      - name: Run tests
+        run: npx lerna run test --scope="@easydynamics/oscal-react-library"
+      - name: Archive artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: oscal-viewer
+          path: packages/oscal-viewer/build
+  build-storybook:
+    name: Build Storybook site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: "npm"
+      - name: Setup pages
+        uses: actions/configure-pages@v4
+      - name: Globally update npm
+        run: npm install -g npm@latest
+      - name: Install dependencies
+        run: npm ci
+      - name: Build library's dependencies
+        run: npx lerna exec --include-dependencies --scope '@easydynamics/oscal-react-library' -- npm run build
+      - name: Build Storybook
+        run: npm run build-storybook
+        working-directory: packages/oscal-react-library
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: packages/oscal-react-library/storybook-static
+          retention-days: "7"
