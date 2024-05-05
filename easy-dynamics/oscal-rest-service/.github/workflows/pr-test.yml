@@ -1,0 +1,38 @@
+name: Run tests
+on:
+  pull_request:
+  push:
+    branches:
+      - develop
+      - main
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        java:
+          # We need to test both the version of javac itself (well, technically the version of
+          # the JDK providing `javax.tools.JavaCompiler`), below called `actual` and the version
+          # passed to the `--release` flag, below called `target`. We check the two most recent
+          # LTS releases supported by Spring Boot and the latest stable release. We check that
+          # all LTSes can target themselves and the oldest supported LTS, and that the latest
+          # stable release can target itself. We do not test against EA builds.
+          - { actual: 17, target: 17 } # Latest LTS
+          - { actual: 19, target: 19 } # Latest stable release
+          - { actual: 20, target: 20 } # Latest stable release
+    runs-on: ubuntu-latest
+    name: "Build and test on Java ${{ matrix.java.actual }} targeting ${{ matrix.java.target }}"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: "${{ matrix.java.actual }}"
+          distribution: 'temurin'
+          cache: 'maven'
+      - name: Delete cached demo content and API
+        run: |
+          rm -rf ~/.m2/repository/.cache/download-maven-plugin/
+      - name: Build and test
+        run: mvn -Djava.version=${{ matrix.java.target }} clean package
