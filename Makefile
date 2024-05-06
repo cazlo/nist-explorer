@@ -1,6 +1,7 @@
 build-oscal-editor:
 	docker build \
 	 -f easy-dynamics/oscal-editor-deployment/all-in-one/Dockerfile \
+	 --progress=plain \
 	 -t oscal-editor .
 
 run-oscal-editor:

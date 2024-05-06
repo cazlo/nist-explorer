@@ -40,7 +40,7 @@ export default function OSCALResolveProfileOrCatalogUrlControls(
   pendingProcesses // tracks state of recursive calls
 ) {
   const itemUrl = new URL(origItemUrl, parentUrl).toString();
-
+  console.log(itemUrl)
   // Add our current itemUrl to the list of pending processes
   pendingProcesses.push(itemUrl);
   fetch(itemUrl)
@@ -48,6 +48,7 @@ export default function OSCALResolveProfileOrCatalogUrlControls(
     .then(
       (result) => {
         const inheritedOSCALObject = {};
+        console.table(result)
         if (result.catalog) {
           inheritedOSCALObject.title = result.catalog.metadata.title;
           inheritedOSCALObject.uuid = result.catalog.uuid;

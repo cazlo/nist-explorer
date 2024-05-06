@@ -11,10 +11,14 @@ import { OSCALSection, OSCALSectionHeader } from "./styles/CommonPageStyles";
 import { OSCALAnchorLinkHeader } from "./OSCALAnchorLinkHeader";
 
 export default function OSCALProfileCatalogInheritance(props) {
+
+  const safe = (item) => {
+
+  }
   const documentLabel = (item) => (
     <Stack direction="row" spacing={2}>
       <Typography>{item.title}</Typography>
-      <Chip label={item.type[0].toUpperCase() + item.type.slice(1)} />
+      <Chip label={!item.type ? "undefined" : item.type[0].toUpperCase() + item.type.slice(1)} />
     </Stack>
   );
 

@@ -1,8 +1,8 @@
 {
   "profile": {
-    "uuid": "8b3beca1-fcdc-43e0-aebb-ffc0a080c486",
+    "uuid": "46c593c4-d3fb-4407-85bf-12d5f0f970e0",
     "metadata": {
-      "title": "NIST Special Publication 800-53 Revision 4 MODERATE IMPACT BASELINE",
+      "title": "NIST Special Publication 800-53 Revision 4 HIGH IMPACT BASELINE",
       "last-modified": "2023-10-12T00:00:00.000000-04:00",
       "version": "2015-01-22",
       "oscal-version": "1.1.1",
@@ -18,7 +18,7 @@
       ],
       "parties": [
         {
-          "uuid": "29dd471e-7206-4388-857b-47673c04c4c9",
+          "uuid": "71c97c27-4f09-4d06-a6a4-065a54c19a1f",
           "type": "organization",
           "name": "Joint Task Force, Transformation Initiative",
           "email-addresses": [
@@ -43,13 +43,13 @@
         {
           "role-id": "creator",
           "party-uuids": [
-            "316876e2-5c7b-4a60-a488-2ed977238f04"
+            "31a5dd8f-978a-4558-8ade-846211607d40"
           ]
         },
         {
           "role-id": "contact",
           "party-uuids": [
-            "316876e2-5c7b-4a60-a488-2ed977238f04"
+            "31a5dd8f-978a-4558-8ade-846211607d40"
           ]
         }
       ]
@@ -66,17 +66,23 @@
               "ac-2.2",
               "ac-2.3",
               "ac-2.4",
+              "ac-2.5",
+              "ac-2.11",
+              "ac-2.12",
+              "ac-2.13",
               "ac-3",
               "ac-4",
               "ac-5",
               "ac-6",
               "ac-6.1",
               "ac-6.2",
+              "ac-6.3",
               "ac-6.5",
               "ac-6.9",
               "ac-6.10",
               "ac-7",
               "ac-8",
+              "ac-10",
               "ac-11",
               "ac-11.1",
               "ac-12",
@@ -88,6 +94,8 @@
               "ac-17.4",
               "ac-18",
               "ac-18.1",
+              "ac-18.4",
+              "ac-18.5",
               "ac-19",
               "ac-19.5",
               "ac-20",
@@ -105,46 +113,68 @@
               "au-2.3",
               "au-3",
               "au-3.1",
+              "au-3.2",
               "au-4",
               "au-5",
+              "au-5.1",
+              "au-5.2",
               "au-6",
               "au-6.1",
               "au-6.3",
+              "au-6.5",
+              "au-6.6",
               "au-7",
               "au-7.1",
               "au-8",
               "au-8.1",
               "au-9",
+              "au-9.2",
+              "au-9.3",
               "au-9.4",
+              "au-10",
               "au-11",
               "au-12",
+              "au-12.1",
+              "au-12.3",
               "ca-1",
               "ca-2",
               "ca-2.1",
+              "ca-2.2",
               "ca-3",
               "ca-3.5",
               "ca-5",
               "ca-6",
               "ca-7",
               "ca-7.1",
+              "ca-8",
               "ca-9",
               "cm-1",
               "cm-2",
               "cm-2.1",
+              "cm-2.2",
               "cm-2.3",
               "cm-2.7",
               "cm-3",
+              "cm-3.1",
               "cm-3.2",
               "cm-4",
+              "cm-4.1",
               "cm-5",
+              "cm-5.1",
+              "cm-5.2",
+              "cm-5.3",
               "cm-6",
+              "cm-6.1",
+              "cm-6.2",
               "cm-7",
               "cm-7.1",
               "cm-7.2",
-              "cm-7.4",
+              "cm-7.5",
               "cm-8",
               "cm-8.1",
+              "cm-8.2",
               "cm-8.3",
+              "cm-8.4",
               "cm-8.5",
               "cm-9",
               "cm-10",
@@ -152,31 +182,46 @@
               "cp-1",
               "cp-2",
               "cp-2.1",
+              "cp-2.2",
               "cp-2.3",
+              "cp-2.4",
+              "cp-2.5",
               "cp-2.8",
               "cp-3",
+              "cp-3.1",
               "cp-4",
               "cp-4.1",
+              "cp-4.2",
               "cp-6",
               "cp-6.1",
+              "cp-6.2",
               "cp-6.3",
               "cp-7",
               "cp-7.1",
               "cp-7.2",
               "cp-7.3",
+              "cp-7.4",
               "cp-8",
               "cp-8.1",
               "cp-8.2",
+              "cp-8.3",
+              "cp-8.4",
               "cp-9",
               "cp-9.1",
+              "cp-9.2",
+              "cp-9.3",
+              "cp-9.5",
               "cp-10",
               "cp-10.2",
+              "cp-10.4",
               "ia-1",
               "ia-2",
               "ia-2.1",
               "ia-2.2",
               "ia-2.3",
+              "ia-2.4",
               "ia-2.8",
+              "ia-2.9",
               "ia-2.11",
               "ia-2.12",
               "ia-3",
@@ -195,11 +240,15 @@
               "ia-8.4",
               "ir-1",
               "ir-2",
+              "ir-2.1",
+              "ir-2.2",
               "ir-3",
               "ir-3.2",
               "ir-4",
               "ir-4.1",
+              "ir-4.4",
               "ir-5",
+              "ir-5.1",
               "ir-6",
               "ir-6.1",
               "ir-7",
@@ -207,12 +256,16 @@
               "ir-8",
               "ma-1",
               "ma-2",
+              "ma-2.2",
               "ma-3",
               "ma-3.1",
               "ma-3.2",
+              "ma-3.3",
               "ma-4",
               "ma-4.2",
+              "ma-4.3",
               "ma-5",
+              "ma-5.1",
               "ma-6",
               "mp-1",
               "mp-2",
@@ -221,26 +274,37 @@
               "mp-5",
               "mp-5.4",
               "mp-6",
+              "mp-6.1",
+              "mp-6.2",
+              "mp-6.3",
               "mp-7",
               "mp-7.1",
               "pe-1",
               "pe-2",
               "pe-3",
+              "pe-3.1",
               "pe-4",
               "pe-5",
               "pe-6",
               "pe-6.1",
+              "pe-6.4",
               "pe-8",
+              "pe-8.1",
               "pe-9",
               "pe-10",
               "pe-11",
+              "pe-11.1",
               "pe-12",
               "pe-13",
+              "pe-13.1",
+              "pe-13.2",
               "pe-13.3",
               "pe-14",
               "pe-15",
+              "pe-15.1",
               "pe-16",
               "pe-17",
+              "pe-18",
               "pl-1",
               "pl-2",
               "pl-2.3",
@@ -251,6 +315,7 @@
               "ps-2",
               "ps-3",
               "ps-4",
+              "ps-4.2",
               "ps-5",
               "ps-6",
               "ps-7",
@@ -261,6 +326,7 @@
               "ra-5",
               "ra-5.1",
               "ra-5.2",
+              "ra-5.4",
               "ra-5.5",
               "sa-1",
               "sa-2",
@@ -276,8 +342,13 @@
               "sa-9.2",
               "sa-10",
               "sa-11",
+              "sa-12",
+              "sa-15",
+              "sa-16",
+              "sa-17",
               "sc-1",
               "sc-2",
+              "sc-3",
               "sc-4",
               "sc-5",
               "sc-7",
@@ -285,10 +356,14 @@
               "sc-7.4",
               "sc-7.5",
               "sc-7.7",
+              "sc-7.8",
+              "sc-7.18",
+              "sc-7.21",
               "sc-8",
               "sc-8.1",
               "sc-10",
               "sc-12",
+              "sc-12.1",
               "sc-13",
               "sc-15",
               "sc-17",
@@ -298,10 +373,12 @@
               "sc-21",
               "sc-22",
               "sc-23",
+              "sc-24",
               "sc-28",
               "sc-39",
               "si-1",
               "si-2",
+              "si-2.1",
               "si-2.2",
               "si-3",
               "si-3.1",
@@ -311,9 +388,14 @@
               "si-4.4",
               "si-4.5",
               "si-5",
+              "si-5.1",
+              "si-6",
               "si-7",
               "si-7.1",
+              "si-7.2",
+              "si-7.5",
               "si-7.7",
+              "si-7.14",
               "si-8",
               "si-8.1",
               "si-8.2",
@@ -438,6 +520,20 @@
                 {
                   "name": "priority",
                   "value": "P1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "ac-10",
+          "adds": [
+            {
+              "position": "starting",
+              "props": [
+                {
+                  "name": "priority",
+                  "value": "P3"
                 }
               ]
             }
@@ -752,6 +848,20 @@
           ]
         },
         {
+          "control-id": "au-10",
+          "adds": [
+            {
+              "position": "starting",
+              "props": [
+                {
+                  "name": "priority",
+                  "value": "P2"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "control-id": "au-11",
           "adds": [
             {
@@ -851,6 +961,20 @@
         },
         {
           "control-id": "ca-7",
+          "adds": [
+            {
+              "position": "starting",
+              "props": [
+                {
+                  "name": "priority",
+                  "value": "P2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "ca-8",
           "adds": [
             {
               "position": "starting",
@@ -1788,6 +1912,20 @@
           ]
         },
         {
+          "control-id": "pe-18",
+          "adds": [
+            {
+              "position": "starting",
+              "props": [
+                {
+                  "name": "priority",
+                  "value": "P3"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "control-id": "pl-1",
           "adds": [
             {
@@ -2138,6 +2276,62 @@
           ]
         },
         {
+          "control-id": "sa-12",
+          "adds": [
+            {
+              "position": "starting",
+              "props": [
+                {
+                  "name": "priority",
+                  "value": "P1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sa-15",
+          "adds": [
+            {
+              "position": "starting",
+              "props": [
+                {
+                  "name": "priority",
+                  "value": "P2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sa-16",
+          "adds": [
+            {
+              "position": "starting",
+              "props": [
+                {
+                  "name": "priority",
+                  "value": "P2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sa-17",
+          "adds": [
+            {
+              "position": "starting",
+              "props": [
+                {
+                  "name": "priority",
+                  "value": "P1"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "control-id": "sc-1",
           "adds": [
             {
@@ -2153,6 +2347,20 @@
         },
         {
           "control-id": "sc-2",
+          "adds": [
+            {
+              "position": "starting",
+              "props": [
+                {
+                  "name": "priority",
+                  "value": "P1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "sc-3",
           "adds": [
             {
               "position": "starting",
@@ -2376,6 +2584,20 @@
           ]
         },
         {
+          "control-id": "sc-24",
+          "adds": [
+            {
+              "position": "starting",
+              "props": [
+                {
+                  "name": "priority",
+                  "value": "P1"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "control-id": "sc-28",
           "adds": [
             {
@@ -2461,6 +2683,20 @@
         },
         {
           "control-id": "si-5",
+          "adds": [
+            {
+              "position": "starting",
+              "props": [
+                {
+                  "name": "priority",
+                  "value": "P1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "control-id": "si-6",
           "adds": [
             {
               "position": "starting",
